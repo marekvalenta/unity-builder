@@ -14,8 +14,10 @@ namespace UnityBuilderAction
   {
     public static void BuildProject()
     {
+      Console.WriteLine("Build AddressableAssets Start");
       AddressableAssetSettings.CleanPlayerContent();
       AddressableAssetSettings.BuildPlayerContent();
+      Console.WriteLine("Build AddressableAssets End");
       
       // Gather values from args
       var options = ArgumentsParser.GetValidatedOptions();
