@@ -6,6 +6,7 @@ using UnityBuilderAction.Reporting;
 using UnityBuilderAction.Versioning;
 using UnityEditor;
 using UnityEditor.Build.Reporting;
+using UnityEditor.AddressableAssets.Settings;
 
 namespace UnityBuilderAction
 {
@@ -13,6 +14,9 @@ namespace UnityBuilderAction
   {
     public static void BuildProject()
     {
+      AddressableAssetSettings.CleanPlayerContent();
+      AddressableAssetSettings.BuildPlayerContent();
+      
       // Gather values from args
       var options = ArgumentsParser.GetValidatedOptions();
 
